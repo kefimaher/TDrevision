@@ -42,7 +42,9 @@ public class ListVoitures {
         return voitures.size();
     }
     public void affiche(){
-// à completer
+        for (Voiture voiture : voitures) {
+            System.out.println(voiture);
+        }
 
     }
 }
