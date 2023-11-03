@@ -6,17 +6,22 @@ public class Main {
 
         try {
             List<Voiture> listeVoitures = new ArrayList<>();
+
+            Agence agence = new Agence("MaAgence", new ListVoitures(listeVoitures));
+
             agence.ajoutVoiture(new Voiture(1, "BMW", 150));
             agence.ajoutVoiture(new Voiture(2, "Renault", 120));
             agence.ajoutVoiture(new Voiture(3, "Ford", 100));
-            Agence agence = new Agence("MaAgence", new ListVoitures(listeVoitures));
+
             Client client1 = new Client(101, "Kefi", "Maher");
             Client client2 = new Client(102, "Siwar", "Zwita");
+
             agence.loueClientVoiture(client1, agence.selectVoitureSelonCritere(new CritereMarque("BMW")).get(0));
             agence.loueClientVoiture(client2, agence.selectVoitureSelonCritere(new CriterePrix(150)).get(0));
             agence.afficheLesClientsEtLeursListesVoitures();
             agence.retourClientVoiture(client1, client1.getVoituresLouees().get(0));
             agence.afficheLesClientsEtLeursListesVoitures();
+
             Map<Client, ListVoitures> clientsTriesParCode = agence.triCodeCroissant();
 
 
@@ -32,7 +37,7 @@ public class Main {
             }
 
         } catch (VoitureException e) {
-            e.printStackTrace();
+           e.printStackTrace();
         }
     }
 }
