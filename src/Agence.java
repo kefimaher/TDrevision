@@ -5,10 +5,6 @@ public class Agence {
     private ListVoitures vs;
     private Map<Client, ListVoitures> ClientVoitureLoue;
 
-    public Agence(String nom) {
-        this.nom = nom;
-    }
-
     public Agence(String nom, ListVoitures vs, Map<Client, ListVoitures> clientVoitureLoue) {
         this.nom = nom;
         this.vs = vs;
