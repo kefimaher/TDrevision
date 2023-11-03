@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Agence {
     private String nom; private ListVoitures
         vs; private Map<Client, ListVoitures>

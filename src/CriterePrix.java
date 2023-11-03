@@ -4,6 +4,6 @@ public class CriterePrix implements Critere {
     this.prix = prix;
 }
     public boolean estSatisfaitPar(Voiture v) {
-//à Compléter
+        return v.getPrixLocation() <= prix;
     }
 }
